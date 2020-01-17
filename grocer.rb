@@ -56,5 +56,5 @@ def checkout(cart, coupons)
 
   total = cart_post_discounts.map { |item| item[:price] * item[:count]}.reduce(:+)
   total *= 0.9 if total > 100
-  return total
+  return total.round(2)
 end
